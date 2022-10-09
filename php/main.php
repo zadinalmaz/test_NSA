@@ -7,7 +7,7 @@ require 'UserHandler.php';
 $db = new Database();
 $userHandler = new UserHandler();
 
-$userId = "Тут id пользователя";
+$userId = 3;
 
 echo $userHandler->getUsers();
 echo PHP_EOL;

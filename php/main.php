@@ -6,8 +6,10 @@ require 'UserHandler.php';
 
 $db = new Database();
 $userHandler = new UserHandler();
+$userHandler->addUser();
+$userHandler->addArticle();
 
-$userId = 3;
+$userId = 1;
 
 echo $userHandler->getUsers();
 echo PHP_EOL;

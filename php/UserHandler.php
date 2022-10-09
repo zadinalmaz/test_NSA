@@ -17,4 +17,14 @@ class UserHandler extends Database
                             (userId, label, text)
                             VALUES (2, 'labeltest','texttest')");
     }
+
+    public function getUsers()
+    {
+        $result = mysqli_query(mysqli_connect("mysql", 'root', getenv('MYSQL_ROOT_PASSWORD')), "SELECT * FROM db_name.user");
+        $newarray = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $newarray[] = $row;
+        }
+        return "users:" . json_encode($newarray);
+    }
 }
